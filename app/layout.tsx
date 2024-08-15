@@ -1,30 +1,38 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CognifyVerse - Platform AI",
-  description: "CognifyVerse menyediakan alat AI untuk membuat konten, membangun resume, dan fitur AI lainnya untuk meningkatkan produktivitas.",
+  title: "CognifyVerse - IdeKontenHub",
+  description:
+    "CognifyVerse menyediakan alat AI untuk membuat konten, membangun resume, dan fitur AI lainnya untuk meningkatkan produktivitas.",
   openGraph: {
-    type: 'website',
+    type: "website",
     // locale: 'en_US',
     // url: 'https://www.cognifyverse.com/',
-    siteName: 'Cognifyverse',
-    title: "CognifyVerse - Platform AI Konten dan Resume",
-    description: "CognifyVerse menyediakan alat AI untuk membuat konten, membangun resume, dan fitur AI lainnya.",
+    siteName: "Cognifyverse",
+    title: "CognifyVerse - Platform AI",
+    description:
+      "CognifyVerse menyediakan alat AI untuk membuat konten, membangun resume, dan fitur AI lainnya.",
     images: [
       {
-        url: '/logo.jpg',
+        url: "/logo.jpg",
         width: 1200,
         height: 630,
-        alt: 'CognifyVerse Overview Image',
+        alt: "CognifyVerse Overview Image",
       },
     ],
   },
 };
-
 
 export default function RootLayout({
   children,
@@ -32,11 +40,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-      <link rel="icon" href="/icon.png" type="image/png" />
-      </head>
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <head>
+          <link rel="icon" href="/icon.png" type="image/png" />
+        </head>
+        <body className={inter.className}>
+          <header>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </header>
+
+          <main>
+          {children}
+          </main>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
