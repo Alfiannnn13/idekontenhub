@@ -3,10 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import {
   ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
 } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -46,18 +42,8 @@ export default function RootLayout({
           <link rel="icon" href="/icon.png" type="image/png" />
         </head>
         <body className={inter.className}>
-          <header>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
-
-          <main>
+        
           {children}
-          </main>
         </body>
       </html>
     </ClerkProvider>
