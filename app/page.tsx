@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="flex flex-col h-full py-8 md:py-36 md:px-32 px-4 w-full items-center text-center gap-12 bg-white text-gray-900">
       {/* Header */}
-      <header className="w-full py-4 bg-white shadow-md fixed top-0 left-0">
+      <header className="w-full py-4 bg-white shadow-md fixed top-0 left-0 z-10">
         <div className="container mx-auto px-4 flex justify-center md:justify-start">
         <Typography
           className="max-w-2xl text-2xl md:text-2xl font-bold leading-tight text-purple-500"
@@ -38,7 +38,7 @@ export default function Home() {
         <Typography className="max-w-2xl text-base md:text-lg mb-8">
           Manfaatkan kekuatan AI untuk membuat, mengoptimalkan, dan mengelola konten Anda dengan mudah. Transformasikan strategi konten Anda dengan alat canggih kami.
         </Typography>
-        <Link href="/dashboard">
+        <Link href="/sign-in">
           <Button className="bg-blue-500 text-white hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 px-4 py-2 text-sm md:text-base">
             Mulai Sekarang
           </Button>
