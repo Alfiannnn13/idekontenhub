@@ -1,29 +1,29 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { TEMPLATE } from "../../_components/TemplateListSection";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Loader2Icon } from "lucide-react";
 interface PROPS {
   selectedTemplate?: TEMPLATE;
-  userFormInput:any;
+  userFormInput: any,
+  loading: boolean
 }
 
+const FormSection = ({ selectedTemplate, userFormInput, loading }: PROPS) => {
+  const [formData, setFormData] = useState<any>();
 
+  const handleInputChange = (event: any) => {
+    const { name, value } = event.target;
+    setFormData({...formData, [name]: value });
+  };
 
-const FormSection = ({ selectedTemplate,userFormInput }: PROPS) => {
-
-    const [formData,setFormData]=useState<any>();
-    const handleInputChange=(event:any)=> {
-        const {name,value}=event.target;
-        setFormData({...formData,[name]:value})
-    }
-
-    const onSubmit=(e:any)=> {
-        e.preventDefault();
-        
-    }
+  const onSubmit = (e: any) => {
+    e.preventDefault();
+    userFormInput(formData);
+  };
 
   return (
     <div className="p-5 shadow-lg border rounded-xl">
@@ -38,17 +38,24 @@ const FormSection = ({ selectedTemplate,userFormInput }: PROPS) => {
         {selectedTemplate?.form?.map((item, index) => (
           <div className="my-2 flex flex-col gap-2 mb-7">
             <label className="">{item.label}</label>
-            {item.field=='input'?
-                <Input name={item.name} required={item?.required}
+            {item.field == "input" ? (
+              <Input
+                name={item.name}
+                required={item?.required}
                 onChange={handleInputChange}
-                />
-                :item.field=='textarea'?
-                <Textarea onChange={handleInputChange}/>:null
-            }
+              />
+            ) : item.field == "textarea" ? (
+              <Textarea onChange={handleInputChange} />
+            ) : null}
           </div>
         ))}
 
-        <Button type="submit" className="w-full py-6 bg-purple-500">Generate Content</Button>
+        <Button type="submit" className="w-full py-6 bg-purple-500"
+          disabled={loading}
+        >
+          {loading&&<Loader2Icon className="animate-spin"/>}
+          Generate Content
+        </Button>
       </form>
     </div>
   );
