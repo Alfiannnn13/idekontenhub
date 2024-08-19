@@ -38,7 +38,7 @@ export default function Home() {
         <Typography className="max-w-2xl text-base md:text-lg mb-8">
           Manfaatkan kekuatan AI untuk membuat, mengoptimalkan, dan mengelola konten Anda dengan mudah. Transformasikan strategi konten Anda dengan alat canggih kami.
         </Typography>
-        <Link href="/sign-in">
+        <Link href="/dashboard">
           <Button className="bg-blue-500 text-white hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 px-4 py-2 text-sm md:text-base">
             Mulai Sekarang
           </Button>
