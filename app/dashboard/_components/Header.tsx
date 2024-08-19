@@ -9,9 +9,7 @@ const Header = () => {
         <input type="text" placeholder='Cari....'
         className="outline-none"/>
       </div>
-      <div className="">
-        <h2></h2>
-      </div>
+     
     </div>
   )
 }
