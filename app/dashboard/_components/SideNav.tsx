@@ -27,7 +27,7 @@ const SideNav = () => {
         {
             name:'Buat Beli Kopi',
             icon:Coffee,
-            path:'/dashboard/billing'
+            path:'/dashboard/coffee'
         },
     ]
 
