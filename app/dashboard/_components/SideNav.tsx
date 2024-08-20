@@ -2,8 +2,8 @@
 
 import { Coffee, FileClock, Home, icons, Settings } from 'lucide-react'
 import Image from 'next/image'
-import { useParams, usePathname } from 'next/navigation'
-import path from 'path'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
 
 const SideNav = () => {
@@ -45,12 +45,14 @@ const SideNav = () => {
 
         <div className="mt-5">
             {MenuList.map((menu, index) => (
-                <div className={`flex gap-2 mb-2 items-center p-3 hover:bg-purple-100 cursor-pointer hover:text-white rounded-lg
+                <Link href={menu.path}>
+                    <div className={`flex gap-2 mb-2 items-center p-3 hover:bg-purple-500 cursor-pointer hover:text-white rounded-lg
                 ${path==menu.path&&'bg-purple-400 text-white'}
                 `}>
                     <menu.icon className='h-6 w-6'/>
                     <h2 className='text-lg'>{menu.name}</h2>
                 </div>
+                </Link>
             ))}
         </div>
     </div>

@@ -5,6 +5,7 @@ import Feature from "@/components/ui/feature"; // Ganti dengan path sebenarnya j
 import { Bolt, RefreshCw, Shield } from "lucide-react";
 import Link from "next/link";
 
+
 export default function Home() {
   return (
     <div className="flex flex-col h-full py-8 md:py-36 md:px-32 px-4 w-full items-center text-center gap-12 bg-white text-gray-900">
