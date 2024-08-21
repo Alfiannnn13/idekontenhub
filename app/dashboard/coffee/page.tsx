@@ -372,9 +372,9 @@ function Coffee() {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:items-center md:gap-8">
           {products.map(product => (
-            <div key={product.id} className="rounded-2xl bg-white border border-gray-200 p-6 shadow-sm sm:px-8 lg:p-8">
+            <div key={product.id} className="rounded-2xl bg-white border border-gray-200 p-6 transition-transform transform  hover:scale-125 hover:z-10 hover:shadow-lg shadow-sm sm:px-8 lg:p-8">
               <div className="text-center">
-                <h2 className="text-lg font-medium text-gray-900 mt-4">
+                <h2 className="text-lg font-medium text-gray-900 hover:text-white mt-4">
                   {product.name}
                 </h2>
                 <Image
