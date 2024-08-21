@@ -31,7 +31,7 @@ const MobileNav = () => {
     {
       name: "Buat Beli Kopi",
       icon: Coffee,
-      path: "/dashboard/billing",
+      path: "/dashboard/coffee",
     },
   ];
 
