@@ -329,22 +329,22 @@ function Coffee() {
         scriptTag.setAttribute('data-client-key', myMidtransClientKey);
         document.body.appendChild(scriptTag);
 
-        scriptTag.onload = () => {
-          window.snap.pay(data.token, {
-            onSuccess: function(result: { order_id: any; }) {
-              const orderId = result.order_id;
-              router.push(`/dashboard/coffee/success?order_id=${orderId}`);
-            },
-            onError: function() {
-              console.error('Payment failed');
-              // Handle payment failure
-            },
-            onPending: function() {
-              console.log('Payment is pending');
-              // Handle payment pending
-            }
-          });
-        };
+        // scriptTag.onload = () => {
+        //   window.snap.pay(data.token, {
+        //     onSuccess: function(result: { order_id: any; }) {
+        //       const orderId = result.order_id;
+        //       router.push(`/dashboard/coffee/success?order_id=${orderId}`);
+        //     },
+        //     onError: function() {
+        //       console.error('Payment failed');
+        //       // Handle payment failure
+        //     },
+        //     onPending: function() {
+        //       console.log('Payment is pending');
+        //       // Handle payment pending
+        //     }
+        //   });
+        // };
         // Close the modal after payment
         setShowModal(false);
       } else {
