@@ -256,6 +256,12 @@
 
 // export default Coffee
 
+
+declare global {
+  interface Window {
+    snap: any;
+  }
+}
 // tes
 "use client";
 import { Button } from '@/components/ui/button'
