@@ -1,27 +1,24 @@
-import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
-import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-import ToastProvider from "@/components/ToastProvider"; // Import ToastProvider
+import { ClerkProvider } from '@clerk/nextjs';
+import { Metadata } from 'next';
+import { Outfit } from 'next/font/google';
+import './globals.css';
 
-const inter = Outfit({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "CognifyVerse - IdeKontenHub",
-  description:
-    "CognifyVerse menyediakan alat AI untuk membuat konten, membangun resume, dan fitur AI lainnya untuk meningkatkan produktivitas.",
+  title: 'CognifyVerse - IdeKontenHub',
+  description: 'CognifyVerse menyediakan alat AI untuk membuat konten, membangun resume, dan fitur AI lainnya.',
   openGraph: {
-    type: "website",
-    siteName: "Cognifyverse",
-    title: "CognifyVerse - Platform AI",
-    description:
-      "CognifyVerse menyediakan alat AI untuk membuat konten, membangun resume, dan fitur AI lainnya.",
+    type: 'website',
+    siteName: 'CognifyVerse',
+    title: 'CognifyVerse - Platform AI',
+    description: 'CognifyVerse menyediakan alat AI untuk membuat konten, membangun resume, dan fitur AI lainnya.',
     images: [
       {
-        url: "/logo.jpg",
+        url: '/logo.jpg',
         width: 1200,
         height: 630,
-        alt: "CognifyVerse Overview Image",
+        alt: 'CognifyVerse Overview Image',
       },
     ],
   },
@@ -29,20 +26,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <ClerkProvider>
       <html lang="en">
         <head>
           <link rel="icon" href="/icon.png" type="image/png" />
+          <script
+            src="https://app.sandbox.midtrans.com/snap/snap.js"
+            data-client-key={process.env.NEXT_PUBLIC_MIDTRANS_CLIENT_KEY}
+            async
+          ></script>
         </head>
-        <body className={inter.className}>
-          <ToastProvider> {/* Tambahkan ToastProvider */}
-            {children}
-          </ToastProvider>
-        </body>
+        <body className={outfit.className}>{children}</body>
       </html>
     </ClerkProvider>
   );
