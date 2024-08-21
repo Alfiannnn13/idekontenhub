@@ -339,7 +339,7 @@ function Coffee() {
           window.snap.pay(data.token, {
             onSuccess: function(result: { order_id: any; }) {
               const orderId = result.order_id;
-              router.push(`/dashboard/coffee/success?order_id=${orderId}`);
+              router.push(`/dashboard/coffee/success`);
             },
             onError: function() {
               console.error('Payment failed');
