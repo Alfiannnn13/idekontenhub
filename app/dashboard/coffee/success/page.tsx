@@ -12,8 +12,9 @@ const SuccessPage = () => {
   useEffect(() => {
     if (!orderId) return;
 
+    // Mengatur pengalihan ke halaman dashboard
     const timer = setTimeout(() => {
-      router.push("/");
+      router.push("/dashboard"); // Pastikan rute ini benar
     }, 5000);
 
     return () => {
