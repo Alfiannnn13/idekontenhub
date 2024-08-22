@@ -8,22 +8,24 @@ const outfit = Outfit({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'CognifyVerse - IdeKontenHub',
-  description: 'CognifyVerse menyediakan alat AI untuk membuat konten, membangun resume, dan fitur AI lainnya.',
+  description: 'CognifyVerse menyediakan alat AI.',
   openGraph: {
     type: 'website',
     siteName: 'CognifyVerse',
     title: 'CognifyVerse - Platform AI',
-    description: 'CognifyVerse menyediakan alat AI untuk membuat konten, membangun resume, dan fitur AI lainnya.',
+    description: 'CognifyVerse menyediakan alat AI.',
     images: [
       {
-        url: '/logo.jpg',
+        url: '/icon.png',
         width: 1200,
         height: 630,
         alt: 'CognifyVerse Overview Image',
       },
     ],
   },
+  authors: [{ name: 'Alfian', url: 'https://cognifyverse.netlify.app/' }],
 };
+
 
 export default function RootLayout({
   children,
