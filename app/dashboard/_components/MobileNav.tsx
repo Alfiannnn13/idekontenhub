@@ -8,6 +8,7 @@ import { Coffee, FileClock, Home, Settings } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { UserButton } from "@clerk/nextjs";
 
 const MobileNav = () => {
   const pathname = usePathname();
@@ -24,12 +25,7 @@ const MobileNav = () => {
       path: "/dashboard/history",
     },
     {
-      name: "Setting",
-      icon: Settings,
-      path: "/dashboard/setting",
-    },
-    {
-      name: "Buat Beli Kopi",
+      name: "Buy Me a Coffee",
       icon: Coffee,
       path: "/dashboard/coffee",
     },
@@ -37,6 +33,7 @@ const MobileNav = () => {
 
   return (
     <header className="p-5 shadow-sm border-b flex justify-between items-center">
+      <UserButton/>
       <Link href="/" className="flex items-center gap-2">
        
       </Link>

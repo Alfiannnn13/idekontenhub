@@ -1,3 +1,4 @@
+import { UserButton } from '@clerk/nextjs'
 import { Search } from 'lucide-react'
 import React from 'react'
 
@@ -8,6 +9,9 @@ const Header = () => {
         <Search/>
         <input type="text" placeholder='Cari....'
         className="outline-none"/>
+      </div>
+      <div className="">
+        <UserButton/>
       </div>
      
     </div>

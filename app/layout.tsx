@@ -2,6 +2,7 @@ import { ClerkProvider } from '@clerk/nextjs';
 import { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 import './globals.css';
+import { ToastContainer } from 'react-toastify';
 
 const outfit = Outfit({ subsets: ['latin'] });
 
@@ -40,7 +41,7 @@ export default function RootLayout({
             async
           ></script>
         </head>
-        <body className={outfit.className}>{children}</body>
+        <body className={outfit.className}>{children} <ToastContainer/> </body>
       </html>
     </ClerkProvider>
   );

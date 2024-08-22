@@ -20,12 +20,7 @@ const SideNav = () => {
             path:'/dashboard/history'
         },
         {
-            name:'Setting',
-            icon:Settings,
-            path:'/dashboard/setting'
-        },
-        {
-            name:'Buat Beli Kopi',
+            name:'Buy Me a Coffee',
             icon:Coffee,
             path:'/dashboard/coffee'
         },
