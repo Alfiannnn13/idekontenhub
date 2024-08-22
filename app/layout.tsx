@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     ],
   },
   authors: [{ name: 'Alfian', url: 'https://cognifyverse.netlify.app/' }],
+  verification: {
+    google: 'googlea370290fe86277da.html'
+  },
 };
 
 
