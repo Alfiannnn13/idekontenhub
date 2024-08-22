@@ -47,7 +47,7 @@ export async function POST(req) {
   const { orderId, amount, itemDetails, customerDetails } = await req.json();
 
   const snap = new Midtrans.Snap({
-    isProduction: false, // Ubah ke true jika di produksi
+    isProduction: true, // Ubah ke true jika di produksi
     serverKey: process.env.MIDTRANS_SERVER_KEY,
   });
 
