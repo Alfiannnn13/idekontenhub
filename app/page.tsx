@@ -31,11 +31,11 @@ export default function Home() {
             className="object-contain"
           />
           <Typography className="max-w-2xl text-2xl md:text-4xl font-bold leading-tight mb-6">
-            Tingkatkan Konten Anda dengan <br />
+            Tingkatkan Konten Lo dengan <br />
             <span className="text-blue-500">Ide KontenHub</span>
           </Typography>
           <Typography className="max-w-2xl text-base md:text-lg mb-8">
-            Manfaatkan kekuatan AI untuk membuat, mengoptimalkan, dan mengelola konten Anda dengan mudah. Transformasikan strategi konten Anda dengan alat canggih kami.
+            Manfaatkan kekuatan AI untuk membuat, mengoptimalkan, dan mengelola konten Lo dengan mudah. Transformasikan strategi konten Lo dengan AI.
           </Typography>
           <Link href="/dashboard">
             <Button className="bg-blue-500 text-white hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105 px-4 py-2 text-sm md:text-base">
